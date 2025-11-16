@@ -1,6 +1,4 @@
-/* FADE IN */
-.fade-in { opacity:0; transform:translateY(20px); transition:all .8s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -377,8 +375,43 @@
 </body>
 </html>
 
+
+<!-- SCROLL SCRIPT -->
+<script>
+const elements = document.querySelectorAll('.fade-in');
+function showOnScroll() {
+elements.forEach(el => {
+const rect = el.getBoundingClientRect();
+if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+});
+}
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
+
+
 <!-- BOOK CALL BUTTON -->
 <a class="fixed-call" href="https://wa.me/61484246614">📞 Book a Call</a>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="fade-in">
+<h2>What clients say</h2>
+<div class="services-grid">
+<div class="service-card">
+<p>“Reach Flow AI helped us cut admin hours by almost 40%. The weekly dashboards show exactly where we save money.”</p>
+<strong>— Michael, Retail Manager</strong>
+</div>
+<div class="service-card">
+<p>“Our booking system and emails are finally under control. The mix of AI + human oversight is a game changer.”</p>
+<strong>— Jess, Gym Owner</strong>
+</div>
+<div class="service-card">
+<p>“Instead of hiring an admin assistant, we outsourced to Reach Flow AI and saved thousands. Highly recommended.”</p>
+<strong>— Tom, Café Operator</strong>
+</div>
+</div>
+</section>
 
 
 <!-- SCROLL SCRIPT -->
