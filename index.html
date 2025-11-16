@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+  @keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50px); }
+}
+
+.animate-wave {
+  animation: wave 6s ease-in-out infinite alternate;
+}
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reach Flow AI — Smart Customer Automation</title>
@@ -244,6 +253,24 @@
     </div>
   </div>
 </section>
+
+    <!-- Gradient Wave Divider -->
+<div class="w-full py-6">
+  <div class="relative mx-auto max-w-5xl h-8 overflow-hidden">
+    <svg viewBox="0 0 1440 120" class="absolute w-full h-full animate-wave">
+      <path fill="url(#rf-gradient)" fill-opacity="1" 
+        d="M0,80 C240,20 480,140 720,80 C960,20 1200,140 1440,80 L1440 120 L0 120 Z"></path>
+
+      <defs>
+        <linearGradient id="rf-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00BFA6"></stop>
+          <stop offset="100%" stop-color="#34D1FF"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</div>
+
     
 <section id="dashboard" class="py-16 bg-slate-50">
   <div class="max-content px-6 text-center">
