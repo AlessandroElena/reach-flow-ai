@@ -1,413 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reach Flow AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo">Reach Flow AI</h1>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
 
-// ReachFlowAI - Next.js Starter (Tailwind CSS)
-// ====================================================
-// This document contains a full Next.js (pages-router) project scaffold you can copy
-// into a new repo. It's tailored to the Reach Flow AI startup (English, Sunshine Coast).
-// Files are separated with markers. Create the files in your project accordingly.
-// Quick setup (locally):
-// 1. npx create-next-app reachflowai
-// 2. cd reachflowai
-// 3. Replace files with the ones below
-// 4. npm install
-// 5. npm run dev
-// Deploy to Vercel for production.
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>AI Automation for Small & Medium Businesses</h2>
+      <p>Simplify emails, customers and office workflows — and save 20–60 hours per month.</p>
+      <a href="#contact" class="cta">Get Started</a>
+    </div>
+  </section>
 
-/* ==== package.json ==== */
-{
-  "name": "reachflowai",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev -p 3000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "13.4.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "clsx": "1.2.1"
-  },
-  "devDependencies": {
-    "autoprefixer": "10.4.14",
-    "postcss": "8.4.24",
-    "tailwindcss": "3.4.7"
-  }
-}
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <div class="grid">
+        <div class="card"><h3>AI Office Support</h3><p>Automate emails, scheduling and follow-ups so your team can focus on growth.</p></div>
+        <div class="card"><h3>Smart Reporting</h3><p>Weekly dashboards showing time saved and operational improvements.</p></div>
+        <div class="card"><h3>AI + Human Customer Care</h3><p>Hybrid model ensuring fast, reliable and human-aligned customer communication.</p></div>
+      </div>
+    </div>
+  </section>
 
-/* ==== tailwind.config.js ==== */
-module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}'
-  ],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#0ea5a4',
-        accent: '#7c3aed'
-      }
-    }
-  },
-  plugins: []
-}
+  <section id="pricing" class="section light">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <div class="grid">
+        <div class="card"><h3>Starter</h3><p>$59/month</p><p>500 AI Emails<br>Weekly Reports</p></div>
+        <div class="card highlight"><h3>Professional</h3><p>$149/month</p><p>3000 AI Emails<br>AI + Human Hybrid Support<br>Advanced Dashboard</p></div>
+        <div class="card"><h3>Enterprise</h3><p>Custom</p><p>Unlimited Volume<br>Dedicated Support</p></div>
+      </div>
+    </div>
+  </section>
 
-/* ==== postcss.config.js ==== */
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
-  }
-}
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Reach Flow AI</h2>
+      <p>Born on the Sunshine Coast, AU, Reach Flow AI was founded by Alessandro Elena (Alex), a Data & AI professional passionate about innovation and business automation.</p>
+    </div>
+  </section>
 
-/* ==== styles/globals.css ==== */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  <section id="contact" class="section light">
+    <div class="container">
+      <h2 class="section-title">Book a Demo</h2>
+      <p>Email: contact@reachflow.ai</p>
+    </div>
+  </section>
 
-html, body, #__next {
-  height: 100%;
-}
+  <footer class="footer">
+    <p>Reach Flow AI · Sunshine Coast, AU · ABN Registered</p>
+  </footer>
+</body>
+</html>
 
+
+/* === Global Styles === */
 body {
-  @apply bg-gray-50 text-gray-800;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* small utility for demo mock dashboard */
-.card { @apply bg-white rounded-2xl shadow p-6; }
-
-/* ==== pages/_app.js ==== */
-import '../styles/globals.css'
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* ==== components/Header.js ==== */
-import Link from 'next/link'
-
-export default function Header() {
-  return (
-    <header className="bg-white border-b">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">RF</div>
-            <div>
-              <div className="font-semibold">Reach Flow AI</div>
-              <div className="text-xs text-gray-500">Sunshine Coast, AU — ABN Registered</div>
-            </div>
-          </a>
-        </Link>
-        <nav className="flex items-center gap-4">
-          <Link href="#features"><a className="text-sm">Features</a></Link>
-          <Link href="#pricing"><a className="text-sm">Pricing</a></Link>
-          <Link href="/demo"><a className="text-sm font-medium">Book a demo</a></Link>
-          <a href="#" className="ml-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-white text-sm">Start Free</a>
-        </nav>
-      </div>
-    </header>
-  )
+/* === Header === */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* ==== components/Footer.js ==== */
-export default function Footer(){
-  return (
-    <footer className="border-t mt-16 bg-white">
-      <div className="container mx-auto px-6 py-10 text-sm text-gray-600">
-        <div className="flex flex-col md:flex-row md:justify-between gap-6">
-          <div>
-            <div className="font-semibold">Reach Flow AI</div>
-            <div>Based in Sunshine Coast, AU</div>
-            <div>ABN Registered</div>
-          </div>
-          <div>
-            <div className="font-semibold">Contact</div>
-            <div>hello@reachflow.ai</div>
-          </div>
-          <div>
-            <div className="font-semibold">Legal</div>
-            <div>Privacy • Terms</div>
-          </div>
-        </div>
-        <div className="mt-6 text-xs text-gray-400">© {new Date().getFullYear()} Reach Flow AI — All rights reserved</div>
-      </div>
-    </footer>
-  )
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ==== components/Hero.js ==== */
-import Link from 'next/link'
-
-export default function Hero(){
-  return (
-    <section className="container mx-auto px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">AI-powered office automation for small & medium businesses</h1>
-          <p className="mt-4 text-lg text-gray-600">We automate emails, scheduling and customer follow-ups while keeping a human in the loop. Save time, reduce costs and scale your operations without adding headcount.</p>
-          <div className="mt-6 flex gap-4">
-            <Link href="/demo"><a className="inline-flex items-center rounded-md bg-primary px-5 py-3 text-white font-medium">Book a demo</a></Link>
-            <a href="#pricing" className="inline-flex items-center rounded-md border px-5 py-3">See pricing</a>
-          </div>
-
-          <div className="mt-8 flex gap-6 text-sm text-gray-500">
-            <div>
-              <div className="font-semibold">Founded</div>
-              <div>Sunshine Coast</div>
-            </div>
-            <div>
-              <div className="font-semibold">Founder</div>
-              <div>Alessandro "Alex" Elena — Data & AI</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-sm text-gray-500">Weekly AI Report</div>
-              <div className="text-2xl font-semibold">24h Saved / week</div>
-            </div>
-            <div className="text-xs text-gray-400">v1.0</div>
-          </div>
-
-          <div className="mt-6">
-            <div className="h-36 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg flex items-center justify-center text-gray-400">Dashboard mockup</div>
-            <ul className="mt-4 space-y-2 text-sm text-gray-600">
-              <li>• 120 emails processed</li>
-              <li>• 38 follow-ups automated</li>
-              <li>• Estimated monthly time saved: 80 hours</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-/* ==== components/Features.js ==== */
-export default function Features(){
-  const items = [
-    {
-      title: 'AI-Powered Office Support',
-      text: 'Automate email triage, scheduling, draft creation and follow-ups. Reduce administrative burden and speed up operations.'
-    },
-    {
-      title: 'Smart Business Reporting',
-      text: 'Automatic weekly dashboards comparing traditional workflows vs AI-assisted ones. See time and cost savings at a glance.'
-    },
-    {
-      title: 'AI + Human Customer Care',
-      text: 'A hybrid model that combines automation with human oversight to keep empathy and brand voice intact.'
-    }
-  ]
-
-  return (
-    <section id="features" className="container mx-auto px-6 py-12">
-      <h2 className="text-3xl font-bold">What we do</h2>
-      <p className="mt-2 text-gray-600">Three pillars that power smarter operations.</p>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {items.map((it) => (
-          <div key={it.title} className="card">
-            <div className="text-xl font-semibold">{it.title}</div>
-            <p className="mt-2 text-gray-600">{it.text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-/* ==== components/UseCases.js ==== */
-export default function UseCases(){
-  const cases = [
-    { title: 'Agencies & Consultants', text: 'Client onboarding, follow-ups, proposal templates.' },
-    { title: 'E‑commerce', text: 'Order support, returns, shipping updates.' },
-    { title: 'Real Estate', text: 'Lead qualification, viewing scheduling, follow-up.' },
-    { title: 'Hospitality', text: 'Booking confirmations, pre-arrival messages, guest support.' }
-  ]
-  return (
-    <section className="container mx-auto px-6 py-12">
-      <h3 className="text-2xl font-semibold">Who benefits</h3>
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-        {cases.map(c => (
-          <div key={c.title} className="card text-sm">
-            <div className="font-semibold">{c.title}</div>
-            <div className="mt-2 text-gray-600">{c.text}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
+nav .cta {
+  background: #0066ff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
 }
 
-/* ==== components/Pricing.js ==== */
-export default function Pricing(){
-  return (
-    <section id="pricing" className="container mx-auto px-6 py-12">
-      <h3 className="text-2xl font-bold">Pricing</h3>
-      <p className="mt-2 text-gray-600">Simple, transparent pricing — pick what fits your business.</p>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="card text-center">
-          <div className="text-lg font-semibold">Starter</div>
-          <div className="mt-2 text-3xl font-bold">€59/month</div>
-          <ul className="mt-4 text-sm text-gray-600 space-y-2">
-            <li>• 500 AI-processed emails</li>
-            <li>• Weekly report</li>
-            <li>• Basic automations</li>
-          </ul>
-          <div className="mt-6"><a href="/demo" className="inline-block px-6 py-2 rounded-md border">Start</a></div>
-        </div>
-        <div className="card text-center border-2 border-primary">
-          <div className="text-lg font-semibold">Professional</div>
-          <div className="mt-2 text-3xl font-bold">€149/month</div>
-          <ul className="mt-4 text-sm text-gray-600 space-y-2">
-            <li>• 3,000 AI-processed emails</li>
-            <li>• Hybrid customer care</li>
-            <li>• Advanced analytics</li>
-          </ul>
-          <div className="mt-6"><a href="/demo" className="inline-block px-6 py-2 rounded-md bg-primary text-white">Choose Pro</a></div>
-        </div>
-        <div className="card text-center">
-          <div className="text-lg font-semibold">Enterprise</div>
-          <div className="mt-2 text-3xl font-bold">Custom</div>
-          <ul className="mt-4 text-sm text-gray-600 space-y-2">
-            <li>• Volume pricing</li>
-            <li>• Custom integrations</li>
-            <li>• Dedicated support</li>
-          </ul>
-          <div className="mt-6"><a href="mailto:hello@reachflow.ai" className="inline-block px-6 py-2 rounded-md border">Contact us</a></div>
-        </div>
-      </div>
-    </section>
-  )
+/* === Hero Section === */
+.hero {
+  background: linear-gradient(to bottom right, #0057e7, #0096ff);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
 }
 
-/* ==== pages/index.js ==== */
-import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Hero from '../components/Hero'
-import Features from '../components/Features'
-import UseCases from '../components/UseCases'
-import Pricing from '../components/Pricing'
-
-export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Reach Flow AI — AI-powered office automation</title>
-        <meta name="description" content="AI-powered office support, smart business reporting and hybrid customer care. Based in Sunshine Coast, AU." />
-      </Head>
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <UseCases />
-        <Pricing />
-
-        <section className="container mx-auto px-6 py-12">
-          <div className="card">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-              <div>
-                <h4 className="text-xl font-semibold">Weekly results you can measure</h4>
-                <p className="mt-2 text-gray-600">Every client receives a weekly dashboard comparing traditional workloads vs our AI-enhanced workflows, with clear charts that show time and cost savings.</p>
-                <div className="mt-4"><a href="/demo" className="inline-block px-6 py-2 rounded-md bg-accent text-white">Request a demo</a></div>
-              </div>
-              <div className="md:col-span-2">
-                <div className="h-40 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg flex items-center justify-center text-gray-400">Report preview</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="container mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="card">
-              <h5 className="font-semibold">About Reach Flow AI</h5>
-              <p className="mt-2 text-gray-600">Reach Flow AI was born on the Sunshine Coast with one simple mission: help small and medium businesses grow smarter through automation and AI. Founded by Alessandro Elena (aka Alex), a Data & AI professional with a passion for innovation and business development, Reach Flow AI combines intelligent automation with human precision.</p>
-              <p className="mt-2 text-gray-600">We optimise communication, office management, and customer support—reducing operational costs while improving efficiency. Our hybrid model blends human insight with AI automation, offering results faster and at a fraction of the cost of a traditional assistant.</p>
-            </div>
-
-            <div className="card">
-              <h5 className="font-semibold">Local business focus</h5>
-              <p className="mt-2 text-gray-600">Streamline customer communication with smart AI. Reach Flow AI helps local businesses automate emails, calls and reporting — saving time, improving retention and delivering measurable results.</p>
-              <ul className="mt-4 text-sm text-gray-600 space-y-2">
-                <li><strong>Based in</strong> Sunshine Coast, AU</li>
-                <li><strong>Business</strong> ABN Registered</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-      </main>
-      <Footer />
-    </div>
-  )
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-/* ==== pages/demo.js ==== */
-import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
-export default function Demo(){
-  return (
-    <div>
-      <Head>
-        <title>Book a demo — Reach Flow AI</title>
-      </Head>
-      <Header />
-
-      <main className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="card">
-            <h2 className="text-2xl font-bold">Book a demo</h2>
-            <p className="mt-2 text-gray-600">Tell us a little about your business and we’ll prepare a tailored demo and weekly savings estimate.</p>
-            <form className="mt-6 space-y-4">
-              <input className="w-full border rounded px-3 py-2" placeholder="Your name" />
-              <input className="w-full border rounded px-3 py-2" placeholder="Business email" />
-              <input className="w-full border rounded px-3 py-2" placeholder="Company" />
-              <select className="w-full border rounded px-3 py-2">
-                <option>Industry (select)</option>
-                <option>Agency</option>
-                <option>Hospitality</option>
-                <option>Real Estate</option>
-                <option>E-commerce</option>
-              </select>
-              <textarea className="w-full border rounded px-3 py-2" placeholder="What would you like automated?" rows="4" />
-              <div><button className="inline-block px-6 py-2 rounded-md bg-primary text-white">Request demo</button></div>
-            </form>
-          </div>
-
-          <div className="card">
-            <h3 className="text-lg font-semibold">What to expect</h3>
-            <ol className="mt-3 list-decimal list-inside text-gray-600 space-y-2">
-              <li>Intro call (20 min)</li>
-              <li>We audit a sample of your emails/workflow</li>
-              <li>We present a tailored demo and estimated savings</li>
-              <li>Pilot onboarding (optional)</li>
-            </ol>
-            <p className="mt-4 text-sm text-gray-500">No credit card required for the demo — we will follow up by email.</p>
-          </div>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  )
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-/* ==== README.NOTES ==== */
-// Notes & next steps:
-// - Replace placeholder contact email with a real inbox (hello@reachflow.ai)
-// - Add actual dashboard screenshots or embed a short demo video
-// - Implement forms (use Formspree, Netlify forms or build API route)
-// - Integrate Auth + payments once MVP proves traction
-// - Use environment variables for ABN, region, and analytics
+.cta {
+  background: #ffcc00;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
 
-// End of file
+/* === Sections === */
+.section {
+  padding: 70px 0;
+}
+
+.section.light {
+  background: #f7f8fa;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* === Grid Layout === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* === Cards === */
+.card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.card.highlight {
+  border: 2px solid #0066ff;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  color: #0057e7;
+}
+
+/* === Footer === */
+.footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
