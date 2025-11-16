@@ -1,199 +1,376 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reach Flow AI</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reach Flow AI — Smart Customer Automation</title>
+  <meta name="description" content="Reach Flow AI — AI-powered customer automation, email & call support and analytics for small businesses." />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // customize Tailwind theme colors to match logo (teal / ocean / light gray)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rf: {
+              50:  '#f3faf9',
+              100: '#e6f7f0',
+              200: '#bfeee0',
+              300: '#99e6d1',
+              400: '#4fd6b4',
+              500: '#00c292', /* primary-ish teal */
+              600: '#00a67a',
+              700: '#007a58', /* deep ocean green */
+              800: '#055a45',
+              900: '#043a2f'
+            },
+            slate: { 50: '#f7fafc', 100: '#f1f5f9' }
+          },
+          borderRadius: {
+            'xl2': '1rem'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Simple base styles -->
+  <style>
+    /* small helpers */
+    .max-content { max-width: 1100px; margin-left:auto; margin-right:auto; }
+    /* hero wave background hint */
+    .hero-wave {
+      background-image: radial-gradient(ellipse at 10% 10%, rgba(0,194,146,0.08), transparent 10%),
+                        radial-gradient(ellipse at 90% 90%, rgba(3,139,212,0.05), transparent 8%);
+    }
+  </style>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <h1 class="logo">Reach Flow AI</h1>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="cta">Book a Demo</a>
+<body class="antialiased text-slate-800 bg-white">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b">
+    <div class="max-content px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="#" class="flex items-center gap-3">
+          <!-- Replace logo file in assets/ -->
+          <img src="ChatGPT Image Reach Flow AI Co..png" alt="Reach Flow AI" class="h-10 w-auto" />
+          <span class="font-semibold text-lg text-rf-700">Reach Flow AI</span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-rf-700">About</a>
+        <a href="#services" class="hover:text-rf-700">Services</a>
+        <a href="#why" class="hover:text-rf-700">Why us</a>
+        <a href="#portfolio" class="hover:text-rf-700">Portfolio</a>
+        <a href="#contact" class="px-4 py-2 bg-rf-500 text-white rounded-full hover:bg-rf-600">Contact</a>
       </nav>
+
+      <!-- mobile menu button -->
+      <div class="md:hidden">
+        <button id="nav-toggle" class="p-2 rounded-md hover:bg-slate-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu (hidden by default) -->
+    <div id="mobile-nav" class="md:hidden hidden border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#about" class="py-2">About</a>
+        <a href="#services" class="py-2">Services</a>
+        <a href="#why" class="py-2">Why us</a>
+        <a href="#portfolio" class="py-2">Portfolio</a>
+        <a href="#contact" class="py-2 font-medium text-rf-700">Contact</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-content">
-      <h2>AI Automation for Small & Medium Businesses</h2>
-      <p>Simplify emails, customers and office workflows — and save 20–60 hours per month.</p>
-      <a href="#contact" class="cta">Get Started</a>
-    </div>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section class="hero-wave py-20">
+      <div class="max-content px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-rf-800">
+            Streamline customer communication with smart AI
+          </h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-2xl">
+            Reach Flow AI helps local businesses automate emails, calls and reporting — saving time, improving retention and delivering measurable results.
+          </p>
 
-  <section id="features" class="section">
-    <div class="container">
-      <h2 class="section-title">What We Do</h2>
-      <div class="grid">
-        <div class="card"><h3>AI Office Support</h3><p>Automate emails, scheduling and follow-ups so your team can focus on growth.</p></div>
-        <div class="card"><h3>Smart Reporting</h3><p>Weekly dashboards showing time saved and operational improvements.</p></div>
-        <div class="card"><h3>AI + Human Customer Care</h3><p>Hybrid model ensuring fast, reliable and human-aligned customer communication.</p></div>
+          <div class="mt-8 flex gap-4">
+            <a href="#contact" class="inline-block bg-rf-500 text-white px-5 py-3 rounded-full font-semibold shadow hover:bg-rf-600">Get Started</a>
+            <a href="#services" class="inline-block border border-rf-500 text-rf-700 px-5 py-3 rounded-full hover:bg-rf-50">Our Services</a>
+          </div>
+
+          <div class="mt-8 flex gap-6 text-sm text-slate-600">
+            <div>
+              <div class="text-xs text-slate-500">Based in</div>
+              <div class="font-medium">Sunshine Coast, AU</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500">Business</div>
+              <div class="font-medium">ABN Registered</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:block">
+          <!-- placeholder for hero visual / wave or illustration -->
+          <div class="w-full h-64 rounded-xl bg-gradient-to-br from-rf-200 to-rf-50 flex items-center justify-center shadow-md">
+            <div class="text-center px-6">
+              <!-- small mockup -->
+              <div class="text-rf-700 font-semibold mb-2">Dashboard preview</div>
+              <div class="w-80 h-44 rounded-lg bg-white border p-4 shadow-sm">
+                <div class="h-3 bg-rf-100 rounded mb-3"></div>
+                <div class="h-3 bg-rf-100 rounded mb-3 w-3/4"></div>
+                <div class="mt-4 grid grid-cols-3 gap-2">
+                  <div class="h-6 bg-rf-50 rounded"></div>
+                  <div class="h-6 bg-rf-50 rounded"></div>
+                  <div class="h-6 bg-rf-50 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+  <div class="max-content px-6 text-center">
+    <h2 class="text-3xl font-bold text-rf-700 mb-4">About Reach Flow AI</h2>
+    <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      <strong>Reach Flow AI</strong> was born on the Sunshine Coast with one simple mission:
+      help small and medium businesses grow smarter through automation and AI.
+      <br><br>
+      Founded by <strong>Alessandro Elena</strong> (aka Alex), a Data & AI professional with a passion for innovation and business development,
+      Reach Flow AI combines intelligent automation with human precision.
+      <br><br>
+      We optimise communication, office management, and customer support—reducing operational costs while improving efficiency.
+      Our hybrid model blends human insight with AI automation, offering results faster and at a fraction of the cost of a traditional assistant.
+      <br><br>
+      Every client receives weekly dashboards comparing traditional workloads with our AI-enhanced workflow, clearly showing time and cost savings through intuitive charts.
+    </p>
+  </div>
+</section>
+
+
+    <!-- SERVICES -->
+   <section id="services" class="py-16 bg-slate-50">
+  <div class="max-content px-6 text-center">
+    <h2 class="text-3xl font-bold text-rf-700 mb-6">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm">
+        <h3 class="font-semibold text-lg text-rf-700 mb-2">AI-Powered Office Support</h3>
+        <p class="text-slate-600 text-sm">
+          We integrate AI with office operations—handling emails, scheduling, and client follow-ups—so your team can focus on growth instead of admin work.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm">
+        <h3 class="font-semibold text-lg text-rf-700 mb-2">Smart Business Reporting</h3>
+        <p class="text-slate-600 text-sm">
+          We provide automated weekly insights comparing traditional workflows vs. AI-assisted ones, highlighting hours saved and financial impact with clear dashboards.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm">
+        <h3 class="font-semibold text-lg text-rf-700 mb-2">AI + Human Customer Care</h3>
+        <p class="text-slate-600 text-sm">
+          Our hybrid approach combines automation with human oversight—maintaining reliability, empathy, and brand tone while optimising response times.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section id="pricing" class="py-16 bg-white">
+  <div class="max-content px-6 text-center">
+    <h2 class="text-3xl font-bold text-rf-700 mb-4">Pricing Plans</h2>
+    <p class="text-slate-600 max-w-2xl mx-auto mb-10">
+      Simple, transparent pricing designed for small and medium businesses.
+      Pay only for what you need — no contracts, no surprises.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Basic -->
+      <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+        <h3 class="text-xl font-semibold text-rf-700 mb-2">Starter</h3>
+        <p class="text-slate-500 text-sm mb-4">Perfect for small teams or solo businesses</p>
+        <p class="text-4xl font-bold text-rf-700 mb-2">$249<span class="text-base font-normal text-slate-500">/month</span></p>
+        <ul class="text-sm text-slate-600 mb-6 space-y-2">
+          <li>✅ AI Email & Task Automation</li>
+          <li>✅ Weekly Activity Reports</li>
+          <li>✅ Dashboard Access</li>
+          <li>❌ No Dedicated Support</li>
+        </ul>
+        <a href="#contact" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Get Started</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="border-2 border-rf-700 rounded-2xl p-6 shadow-lg bg-slate-50 hover:shadow-xl transition-all">
+        <h3 class="text-xl font-semibold text-rf-700 mb-2">Professional</h3>
+        <p class="text-slate-500 text-sm mb-4">For growing businesses needing deeper insights</p>
+        <p class="text-4xl font-bold text-rf-700 mb-2">$499<span class="text-base font-normal text-slate-500">/month</span></p>
+        <ul class="text-sm text-slate-600 mb-6 space-y-2">
+          <li>✅ Full AI Workflow Integration</li>
+          <li>✅ Weekly Reports & Cost Comparison</li>
+          <li>✅ Custom Power BI Dashboards</li>
+          <li>✅ Priority Support</li>
+        </ul>
+        <a href="#contact" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Start Today</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+        <h3 class="text-xl font-semibold text-rf-700 mb-2">Enterprise</h3>
+        <p class="text-slate-500 text-sm mb-4">Tailored AI solutions for larger teams</p>
+        <p class="text-4xl font-bold text-rf-700 mb-2">Custom</p>
+        <ul class="text-sm text-slate-600 mb-6 space-y-2">
+          <li>✅ End-to-End Automation</li>
+          <li>✅ Real-Time Dashboards</li>
+          <li>✅ Team Training & Support</li>
+          <li>✅ Dedicated Account Manager</li>
+        </ul>
+        <a href="mailto:contact@reachflowai.com" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Contact Us</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+    
+<section id="dashboard" class="py-16 bg-slate-50">
+  <div class="max-content px-6 text-center">
+    <h2 class="text-3xl font-bold text-rf-700 mb-4">Performance Dashboard Example</h2>
+    <p class="text-slate-600 max-w-3xl mx-auto mb-8">
+      Every week, we deliver a clear dashboard showing your business performance, 
+      comparing traditional workflows vs. AI-enhanced workflows. 
+      You’ll see hours saved, productivity gains, and cost reduction visualised in an easy-to-understand format.
+    </p>
 
-  <section id="pricing" class="section light">
-    <div class="container">
-      <h2 class="section-title">Pricing</h2>
-      <div class="grid">
-        <div class="card"><h3>Starter</h3><p>$59/month</p><p>500 AI Emails<br>Weekly Reports</p></div>
-        <div class="card highlight"><h3>Professional</h3><p>$149/month</p><p>3000 AI Emails<br>AI + Human Hybrid Support<br>Advanced Dashboard</p></div>
-        <div class="card"><h3>Enterprise</h3><p>Custom</p><p>Unlimited Volume<br>Dedicated Support</p></div>
+    <div class="max-w-4xl mx-auto">
+      <img src="ChatGPT Image 12 nov 2025, 20_13_30.png" alt="Reach Flow AI Dashboard" class="rounded-2xl shadow-lg mb-6">
+      <p class="text-sm text-slate-500 italic">
+        Example: weekly performance dashboard comparing manual operations vs. AI-automated workflows.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-16 bg-slate-50">
+      <div class="max-content px-6">
+        <h2 class="text-3xl font-bold text-rf-700 mb-6 text-center">Portfolio & Case Studies</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Project placeholders: fill with real blocks later -->
+          <div class="bg-white p-6 rounded-xl2 shadow-sm">
+            <h3 class="font-semibold">Erbachers — Sales dashboard</h3>
+            <p class="text-sm text-slate-600 mt-2">Periodic sales analysis and dashboarding for retail customer.</p>
+            <a class="inline-block mt-4 text-rf-700 font-medium" href="#">View project</a>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl2 shadow-sm">
+            <h3 class="font-semibold">South Swell — Cost & sales analysis</h3>
+            <p class="text-sm text-slate-600 mt-2">Cost analysis, seasonality and Power BI dashboards for e-commerce.</p>
+            <a class="inline-block mt-4 text-rf-700 font-medium" href="#">View project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (placeholder) -->
+    <section id="testimonials" class="py-16">
+      <div class="max-content px-6 text-center">
+        <h2 class="text-3xl font-bold text-rf-700 mb-6">What clients say</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 bg-white rounded-xl2 shadow-sm">
+            <!-- add testimonial text -->
+          </div>
+          <div class="p-6 bg-white rounded-xl2 shadow-sm">
+            <!-- add testimonial text -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="CAREERS" class="py-16">
+  <div class="max-content px-6 text-center">
+    <h2 class="text-3xl font-bold text-rf-700 mb-4">Join Our Team</h2>
+    <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      We’re growing fast and looking for motivated individuals who want to be part of something new.
+      Whether you’re into AI, data, communication, or admin support—Reach Flow AI offers a space where tech meets people.
+      <br><br>
+      We’re based on the Sunshine Coast but work with talent everywhere. 
+      If you’d like to collaborate, send your CV or a short intro to 
+      <a href="mailto:careers@reachflowai.com" class="text-rf-700 font-medium">careers@reachflowai.com</a>.
+    </p>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 bg-slate-50">
+      <div class="max-content px-6 text-center">
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">Contact</h2>
+        <p class="text-slate-600 mb-6">Interested in a pilot or quote? Reach out — happy to discuss a free 15-minute discovery call.</p>
+
+        <div class="max-w-xl mx-auto">
+          <!-- simple mailto form (no backend) -->
+          <form action="mailto:contact@reachflowai.com" method="post" enctype="text/plain" class="grid gap-4">
+            <input name="name" required class="border p-3 rounded" placeholder="Your name" />
+            <input name="email" type="email" required class="border p-3 rounded" placeholder="Email" />
+            <input name="company" class="border p-3 rounded" placeholder="Company (optional)" />
+            <textarea name="message" rows="5" class="border p-3 rounded" placeholder="Short description of the project"></textarea>
+            <div class="flex gap-4 justify-center">
+              <button type="submit" class="bg-rf-700 text-white px-6 py-3 rounded-full">Send Message</button>
+              <a href="mailto:contact@reachflowai.com" class="px-6 py-3 rounded-full border border-slate-200">Or email directly</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="mt-8 text-sm text-slate-500">
+          <p>Phone: <a href="tel:+61484246614" class="text-rf-700 font-medium">+61 484 246 614</a></p>
+          <p>ABN: <span class="font-medium">84818053903</span></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-rf-700 text-white py-8 mt-12">
+    <div class="max-content px-6 text-center">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="font-semibold">Reach Flow AI</div>
+          <div class="text-sm">Smart customer automation — Sunshine Coast</div>
+        </div>
+
+        <div class="text-sm">
+          <div>© <span id="year"></span> Reach Flow AI</div>
+          <div>ABN: <span class="font-medium">84818053903</span></div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Reach Flow AI</h2>
-      <p>Born on the Sunshine Coast, AU, Reach Flow AI was founded by Alessandro Elena (Alex), a Data & AI professional passionate about innovation and business automation.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="section light">
-    <div class="container">
-      <h2 class="section-title">Book a Demo</h2>
-      <p>Email: contact@reachflow.ai</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>Reach Flow AI · Sunshine Coast, AU · ABN Registered</p>
   </footer>
+
+  <script>
+    // small UI scripts
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    navToggle?.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
-
-
-/* === Global Styles === */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* === Header === */
-.header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav .cta {
-  background: #0066ff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  color: white;
-}
-
-/* === Hero Section === */
-.hero {
-  background: linear-gradient(to bottom right, #0057e7, #0096ff);
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.cta {
-  background: #ffcc00;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-}
-
-/* === Sections === */
-.section {
-  padding: 70px 0;
-}
-
-.section.light {
-  background: #f7f8fa;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-/* === Grid Layout === */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-/* === Cards === */
-.card {
-  background: white;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.card.highlight {
-  border: 2px solid #0066ff;
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  color: #0057e7;
-}
-
-/* === Footer === */
-.footer {
-  background: #111;
-  color: #ddd;
-  text-align: center;
-  padding: 25px 0;
-  margin-top: 40px;
-}
 
