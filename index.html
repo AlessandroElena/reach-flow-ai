@@ -1,15 +1,21 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reach Flow AI — Smart Customer Automation</title>
-  <meta name="description" content="Reach Flow AI — AI-powered customer automation, email & call support and analytics for small businesses." />
+
+  <title>Reach Flow — Business Consulting & Remote Support</title>
+
+  <meta
+    name="description"
+    content="Reach Flow helps small and growing businesses run better through business consulting, data & reporting, office support, process improvement and AI automation."
+  />
 
   <!-- Tailwind Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
-    // customize Tailwind theme colors to match logo (teal / ocean / light gray)
     tailwind.config = {
       theme: {
         extend: {
@@ -20,14 +26,19 @@
               200: '#bfeee0',
               300: '#99e6d1',
               400: '#4fd6b4',
-              500: '#00c292', /* primary-ish teal */
+              500: '#00c292',
               600: '#00a67a',
-              700: '#007a58', /* deep ocean green */
+              700: '#007a58',
               800: '#055a45',
               900: '#043a2f'
             },
-            slate: { 50: '#f7fafc', 100: '#f1f5f9' }
+
+            slate: {
+              50: '#f7fafc',
+              100: '#f1f5f9'
+            }
           },
+
           borderRadius: {
             'xl2': '1rem'
           }
@@ -36,359 +47,1546 @@
     }
   </script>
 
-  <!-- Simple base styles -->
+  <!-- Base styles -->
   <style>
-    /* small helpers */
-    .max-content { max-width: 1100px; margin-left:auto; margin-right:auto; }
-    /* hero wave background hint */
+    .max-content {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .hero-wave {
-      background-image: radial-gradient(ellipse at 10% 10%, rgba(0,194,146,0.08), transparent 10%),
-                        radial-gradient(ellipse at 90% 90%, rgba(3,139,212,0.05), transparent 8%);
+      background-image:
+        radial-gradient(
+          ellipse at 10% 10%,
+          rgba(0,194,146,0.08),
+          transparent 10%
+        ),
+        radial-gradient(
+          ellipse at 90% 90%,
+          rgba(3,139,212,0.05),
+          transparent 8%
+        );
+    }
+
+    .service-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .soft-card {
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     }
   </style>
 </head>
+
 <body class="antialiased text-slate-800 bg-white">
 
-  <!-- NAV -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
   <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b">
+
     <div class="max-content px-6 py-4 flex items-center justify-between">
+
       <div class="flex items-center gap-4">
+
         <a href="#" class="flex items-center gap-3">
-          <!-- Replace logo file in assets/ -->
-          <img src="ChatGPT Image Reach Flow AI Co..png" alt="Reach Flow AI" class="h-10 w-auto" />
-          <span class="font-semibold text-lg text-rf-700">Reach Flow AI</span>
+
+          <img
+            src="ChatGPT Image Reach Flow AI Co..png"
+            alt="Reach Flow"
+            class="h-10 w-auto"
+          />
+
+          <span class="font-semibold text-lg text-rf-700">
+            Reach Flow
+          </span>
+
         </a>
+
       </div>
+
+      <!-- Desktop navigation -->
 
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:text-rf-700">About</a>
-        <a href="#services" class="hover:text-rf-700">Services</a>
-        <a href="#why" class="hover:text-rf-700">Why us</a>
-        <a href="#portfolio" class="hover:text-rf-700">Portfolio</a>
-        <a href="#contact" class="px-4 py-2 bg-rf-500 text-white rounded-full hover:bg-rf-600">Contact</a>
+
+        <a href="#about" class="hover:text-rf-700">
+          About
+        </a>
+
+        <a href="#services" class="hover:text-rf-700">
+          Services
+        </a>
+
+        <a href="#approach" class="hover:text-rf-700">
+          Our Approach
+        </a>
+
+        <a href="#portfolio" class="hover:text-rf-700">
+          Portfolio
+        </a>
+
+        <a
+          href="#contact"
+          class="px-4 py-2 bg-rf-500 text-white rounded-full hover:bg-rf-600"
+        >
+          Let's Talk
+        </a>
+
       </nav>
 
-      <!-- mobile menu button -->
+      <!-- Mobile menu button -->
+
       <div class="md:hidden">
-        <button id="nav-toggle" class="p-2 rounded-md hover:bg-slate-100">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+
+        <button
+          id="nav-toggle"
+          class="p-2 rounded-md hover:bg-slate-100"
+          aria-label="Open navigation"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+
           </svg>
+
         </button>
+
       </div>
+
     </div>
 
-    <!-- mobile menu (hidden by default) -->
+    <!-- Mobile navigation -->
+
     <div id="mobile-nav" class="md:hidden hidden border-t">
+
       <div class="px-6 py-4 flex flex-col gap-3">
-        <a href="#about" class="py-2">About</a>
-        <a href="#services" class="py-2">Services</a>
-        <a href="#why" class="py-2">Why us</a>
-        <a href="#portfolio" class="py-2">Portfolio</a>
-        <a href="#contact" class="py-2 font-medium text-rf-700">Contact</a>
+
+        <a href="#about" class="py-2">
+          About
+        </a>
+
+        <a href="#services" class="py-2">
+          Services
+        </a>
+
+        <a href="#approach" class="py-2">
+          Our Approach
+        </a>
+
+        <a href="#portfolio" class="py-2">
+          Portfolio
+        </a>
+
+        <a href="#contact" class="py-2 font-medium text-rf-700">
+          Let's Talk
+        </a>
+
       </div>
+
     </div>
+
   </header>
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <main>
+
     <section class="hero-wave py-20">
+
       <div class="max-content px-6 grid lg:grid-cols-2 gap-10 items-center">
+
         <div>
+
+          <div class="inline-flex items-center gap-2 mb-5">
+
+            <span class="w-2 h-2 rounded-full bg-rf-500"></span>
+
+            <span class="text-sm font-medium text-rf-700">
+              Business Consulting & Remote Support
+            </span>
+
+          </div>
+
+
           <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-rf-800">
-            Streamline customer communication with smart AI
+
+            Better systems.
+            <br />
+
+            Better decisions.
+            <br />
+
+            Better business.
+
           </h1>
-          <p class="mt-4 text-lg text-slate-600 max-w-2xl">
-            Reach Flow AI helps local businesses automate emails, calls and reporting — saving time, improving retention and delivering measurable results.
+
+
+          <p class="mt-5 text-lg text-slate-600 max-w-2xl leading-relaxed">
+
+            Reach Flow helps small and growing businesses run better through
+            practical consulting, smarter processes, clear reporting,
+            remote office support and AI-powered automation.
+
           </p>
 
-          <div class="mt-8 flex gap-4">
-            <a href="#contact" class="inline-block bg-rf-500 text-white px-5 py-3 rounded-full font-semibold shadow hover:bg-rf-600">Get Started</a>
-            <a href="#services" class="inline-block border border-rf-500 text-rf-700 px-5 py-3 rounded-full hover:bg-rf-50">Our Services</a>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+
+            <a
+              href="#contact"
+              class="inline-block bg-rf-500 text-white px-5 py-3 rounded-full font-semibold shadow hover:bg-rf-600"
+            >
+              Book a Free Consultation
+            </a>
+
+            <a
+              href="#services"
+              class="inline-block border border-rf-500 text-rf-700 px-5 py-3 rounded-full hover:bg-rf-50"
+            >
+              Explore Services
+            </a>
+
           </div>
 
-          <div class="mt-8 flex gap-6 text-sm text-slate-600">
+
+          <div class="mt-8 flex gap-8 text-sm text-slate-600">
+
             <div>
-              <div class="text-xs text-slate-500">Based in</div>
-              <div class="font-medium">Sunshine Coast, AU</div>
+
+              <div class="text-xs text-slate-500">
+                Based in
+              </div>
+
+              <div class="font-medium">
+                Australia
+              </div>
+
             </div>
+
+
             <div>
-              <div class="text-xs text-slate-500">Business</div>
-              <div class="font-medium">ABN Registered</div>
+
+              <div class="text-xs text-slate-500">
+                Business
+              </div>
+
+              <div class="font-medium">
+                ABN Registered
+              </div>
+
             </div>
+
+
+            <div>
+
+              <div class="text-xs text-slate-500">
+                Delivery
+              </div>
+
+              <div class="font-medium">
+                Remote
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
+
+        <!-- Hero visual -->
 
         <div class="hidden lg:block">
-          <!-- placeholder for hero visual / wave or illustration -->
-          <div class="w-full h-64 rounded-xl bg-gradient-to-br from-rf-200 to-rf-50 flex items-center justify-center shadow-md">
+
+          <div
+            class="w-full h-72 rounded-xl bg-gradient-to-br from-rf-200 to-rf-50 flex items-center justify-center shadow-md"
+          >
+
             <div class="text-center px-6">
-              <!-- small mockup -->
-              <div class="text-rf-700 font-semibold mb-2">Dashboard preview</div>
-              <div class="w-80 h-44 rounded-lg bg-white border p-4 shadow-sm">
-                <div class="h-3 bg-rf-100 rounded mb-3"></div>
-                <div class="h-3 bg-rf-100 rounded mb-3 w-3/4"></div>
-                <div class="mt-4 grid grid-cols-3 gap-2">
-                  <div class="h-6 bg-rf-50 rounded"></div>
-                  <div class="h-6 bg-rf-50 rounded"></div>
-                  <div class="h-6 bg-rf-50 rounded"></div>
-                </div>
+
+              <div class="text-rf-700 font-semibold mb-4">
+                Business Performance
               </div>
+
+
+              <div class="w-80 h-48 rounded-lg bg-white border p-5 shadow-sm">
+
+                <div class="flex justify-between items-center mb-5">
+
+                  <div class="h-3 bg-rf-100 rounded w-24"></div>
+
+                  <div class="h-3 bg-rf-50 rounded w-12"></div>
+
+                </div>
+
+
+                <div class="grid grid-cols-3 gap-3 mb-5">
+
+                  <div class="h-14 bg-rf-50 rounded-lg p-3">
+                    <div class="h-2 bg-rf-200 rounded w-8 mb-2"></div>
+                    <div class="h-3 bg-rf-100 rounded w-12"></div>
+                  </div>
+
+                  <div class="h-14 bg-rf-50 rounded-lg p-3">
+                    <div class="h-2 bg-rf-200 rounded w-8 mb-2"></div>
+                    <div class="h-3 bg-rf-100 rounded w-12"></div>
+                  </div>
+
+                  <div class="h-14 bg-rf-50 rounded-lg p-3">
+                    <div class="h-2 bg-rf-200 rounded w-8 mb-2"></div>
+                    <div class="h-3 bg-rf-100 rounded w-12"></div>
+                  </div>
+
+                </div>
+
+
+                <div class="flex items-end gap-2 h-16">
+
+                  <div class="w-8 h-8 bg-rf-100 rounded-t"></div>
+
+                  <div class="w-8 h-12 bg-rf-200 rounded-t"></div>
+
+                  <div class="w-8 h-10 bg-rf-100 rounded-t"></div>
+
+                  <div class="w-8 h-16 bg-rf-300 rounded-t"></div>
+
+                  <div class="w-8 h-14 bg-rf-200 rounded-t"></div>
+
+                  <div class="w-8 h-16 bg-rf-400 rounded-t"></div>
+
+                </div>
+
+              </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- ABOUT -->
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
     <section id="about" class="py-16">
-  <div class="max-content px-6 text-center">
-    <h2 class="text-3xl font-bold text-rf-700 mb-4">About Reach Flow AI</h2>
-    <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      <strong>Reach Flow AI</strong> was born on the Sunshine Coast with one simple mission:
-      help small and medium businesses grow smarter through automation and AI.
-      <br><br>
-      Founded by <strong>Alessandro Elena</strong> (aka Alex), a Data & AI professional with a passion for innovation and business development,
-      Reach Flow AI combines intelligent automation with human precision.
-      <br><br>
-      We optimise communication, office management, and customer support—reducing operational costs while improving efficiency.
-      Our hybrid model blends human insight with AI automation, offering results faster and at a fraction of the cost of a traditional assistant.
-      <br><br>
-      Every client receives weekly dashboards comparing traditional workloads with our AI-enhanced workflow, clearly showing time and cost savings through intuitive charts.
-    </p>
-  </div>
-</section>
+
+      <div class="max-content px-6">
+
+        <div class="text-center">
+
+          <h2 class="text-3xl font-bold text-rf-700 mb-4">
+            About Reach Flow
+          </h2>
+
+          <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
+
+            Reach Flow was created with one simple idea:
+            <strong>small businesses deserve access to practical business support
+            without the complexity and cost of a large consultancy.</strong>
+
+          </p>
+
+        </div>
 
 
-    <!-- SERVICES -->
-   <section id="services" class="py-16 bg-slate-50">
-  <div class="max-content px-6 text-center">
-    <h2 class="text-3xl font-bold text-rf-700 mb-6">Our Services</h2>
-    <div class="grid md:grid-cols-3 gap-6">
+        <div class="mt-10 grid md:grid-cols-2 gap-8 items-center">
 
-      <div class="bg-white p-6 rounded-xl2 shadow-sm">
-        <h3 class="font-semibold text-lg text-rf-700 mb-2">AI-Powered Office Support</h3>
-        <p class="text-slate-600 text-sm">
-          We integrate AI with office operations—handling emails, scheduling, and client follow-ups—so your team can focus on growth instead of admin work.
-        </p>
+          <div>
+
+            <h3 class="text-xl font-semibold text-rf-700 mb-3">
+              Practical solutions, built around your business.
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed">
+
+              Every business is different. Some need better reporting.
+              Others need cleaner processes, stronger administration,
+              better systems or help managing day-to-day operations.
+
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mt-4">
+
+              Reach Flow combines business analysis, technology and
+              hands-on support to understand how your business currently
+              works, identify what can be improved and implement practical
+              solutions that make a measurable difference.
+
+            </p>
+
+          </div>
+
+
+          <div class="bg-slate-50 rounded-2xl p-8">
+
+            <div class="text-sm font-semibold text-rf-700 mb-4">
+              WHAT WE BRING TO THE TABLE
+            </div>
+
+            <ul class="space-y-4 text-sm text-slate-600">
+
+              <li class="flex gap-3">
+                <span class="text-rf-500 font-bold">01</span>
+                Business & data analysis
+              </li>
+
+              <li class="flex gap-3">
+                <span class="text-rf-500 font-bold">02</span>
+                Process & operations improvement
+              </li>
+
+              <li class="flex gap-3">
+                <span class="text-rf-500 font-bold">03</span>
+                Remote office support
+              </li>
+
+              <li class="flex gap-3">
+                <span class="text-rf-500 font-bold">04</span>
+                AI & workflow automation
+              </li>
+
+              <li class="flex gap-3">
+                <span class="text-rf-500 font-bold">05</span>
+                Ongoing business support
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="bg-white p-6 rounded-xl2 shadow-sm">
-        <h3 class="font-semibold text-lg text-rf-700 mb-2">Smart Business Reporting</h3>
-        <p class="text-slate-600 text-sm">
-          We provide automated weekly insights comparing traditional workflows vs. AI-assisted ones, highlighting hours saved and financial impact with clear dashboards.
-        </p>
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services" class="py-16 bg-slate-50">
+
+      <div class="max-content px-6">
+
+        <div class="text-center mb-10">
+
+          <h2 class="text-3xl font-bold text-rf-700 mb-4">
+            What We Do
+          </h2>
+
+          <p class="text-slate-600 max-w-2xl mx-auto">
+
+            Flexible support for the areas that keep your business moving.
+            Choose one service, combine several, or let us build a solution
+            around your specific needs.
+
+          </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+          <!-- DATA -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              01 — DATA
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              Data & Business Intelligence
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Turn scattered business data into clear information you can
+              actually use to make better decisions.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Power BI dashboards</li>
+              <li>• KPI reporting</li>
+              <li>• Sales & customer analysis</li>
+              <li>• Forecasting</li>
+              <li>• Excel & data optimisation</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- OFFICE -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              02 — OPERATIONS
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              Office & Operations Support
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Keep day-to-day operations organised while improving the
+              systems and processes behind them.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Scheduling & coordination</li>
+              <li>• Documentation & records</li>
+              <li>• Invoices & purchasing</li>
+              <li>• Supplier coordination</li>
+              <li>• Remote administration</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- PROCESS -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              03 — PROCESS
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              Process Improvement
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Identify bottlenecks, simplify workflows and create practical
+              systems that make your business easier to run.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Workflow mapping</li>
+              <li>• SOP development</li>
+              <li>• Process optimisation</li>
+              <li>• CRM & admin systems</li>
+              <li>• Documentation</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- AI -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              04 — TECHNOLOGY
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              AI & Automation
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Reduce repetitive work and use AI where it can genuinely
+              improve efficiency.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Automated reporting</li>
+              <li>• AI workflows</li>
+              <li>• Email automation</li>
+              <li>• Data extraction</li>
+              <li>• Internal AI tools</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- CONSULTING -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              05 — CONSULTING
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              Business Consulting
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Practical support for businesses that need an experienced
+              perspective to understand problems and identify opportunities.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Business analysis</li>
+              <li>• Operational reviews</li>
+              <li>• Business improvement plans</li>
+              <li>• Reporting & recommendations</li>
+              <li>• Strategic support</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- ONGOING -->
+
+          <div class="service-card bg-white p-6 rounded-xl2 shadow-sm">
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              06 — SUPPORT
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700 mb-3">
+              Ongoing Business Support
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed">
+
+              Flexible ongoing support for businesses that need reliable
+              remote help without hiring another full-time employee.
+
+            </p>
+
+            <ul class="mt-5 text-sm text-slate-600 space-y-2">
+
+              <li>• Monthly reporting</li>
+              <li>• Admin & operations</li>
+              <li>• Data analysis</li>
+              <li>• Process support</li>
+              <li>• Continuous improvement</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="bg-white p-6 rounded-xl2 shadow-sm">
-        <h3 class="font-semibold text-lg text-rf-700 mb-2">AI + Human Customer Care</h3>
-        <p class="text-slate-600 text-sm">
-          Our hybrid approach combines automation with human oversight—maintaining reliability, empathy, and brand tone while optimising response times.
-        </p>
+    </section>
+
+
+    <!-- =========================
+         OFFICE SUPPORT FEATURE
+    ========================== -->
+
+    <section class="py-16 bg-white">
+
+      <div class="max-content px-6">
+
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+
+          <div>
+
+            <div class="text-rf-500 text-sm font-semibold mb-3">
+              OFFICE & OPERATIONS
+            </div>
+
+            <h2 class="text-3xl font-bold text-rf-700 mb-5">
+              Tailored to your needs.
+            </h2>
+
+            <p class="text-slate-600 leading-relaxed">
+
+              From overseeing day-to-day office operations to keeping
+              workflows, records and compliance on track, office management
+              is where everything comes together.
+
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mt-4">
+
+              Schedules are managed, meetings coordinated, correspondence
+              handled and systems kept clean and efficient.
+
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mt-4">
+
+              Budgets, invoices, purchasing, suppliers and facilities?
+              All covered. Processes are implemented, followed and
+              fine-tuned so your business runs exactly as it should.
+
+            </p>
+
+          </div>
+
+
+          <div class="bg-slate-50 rounded-2xl p-8">
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-5">
+              We can support with:
+            </h3>
+
+            <div class="grid grid-cols-2 gap-4 text-sm text-slate-600">
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Office administration
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Scheduling
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Records & documentation
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Invoices & purchasing
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Supplier coordination
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                Workflow management
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-    </div>
-  </div>
-</section>
+    </section>
+
+
+    <!-- =========================
+         APPROACH
+    ========================== -->
+
+    <section id="approach" class="py-16 bg-slate-50">
+
+      <div class="max-content px-6 text-center">
+
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">
+          Our Approach
+        </h2>
+
+        <p class="text-slate-600 max-w-2xl mx-auto mb-10">
+
+          We don't believe in off-the-shelf solutions.
+          We first understand the problem, then build the right solution
+          around your business.
+
+        </p>
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <div class="text-3xl font-bold text-rf-300 mb-4">
+              01
+            </div>
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Understand
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              We look at how your business currently works, where your data
+              lives and where time or money is being lost.
+
+            </p>
+
+          </div>
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <div class="text-3xl font-bold text-rf-300 mb-4">
+              02
+            </div>
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Improve
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              We identify practical improvements and build the systems,
+              reports or workflows needed to solve them.
+
+            </p>
+
+          </div>
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <div class="text-3xl font-bold text-rf-300 mb-4">
+              03
+            </div>
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Support
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              We stay involved when needed, helping maintain systems,
+              analyse performance and continuously improve the business.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONSULTING CTA
+    ========================== -->
+
+    <section class="py-16">
+
+      <div class="max-content px-6">
+
+        <div class="bg-rf-700 rounded-2xl p-8 md:p-12 text-white text-center">
+
+          <h2 class="text-3xl font-bold mb-4">
+            Not sure what you need?
+          </h2>
+
+          <p class="max-w-2xl mx-auto text-rf-50 leading-relaxed">
+
+            That's exactly where we can help.
+            Tell us what's not working, what is taking too much time,
+            or where your business is getting stuck.
+            We'll help identify the right solution.
+
+          </p>
+
+          <a
+            href="#contact"
+            class="inline-block mt-7 bg-white text-rf-700 px-6 py-3 rounded-full font-semibold hover:bg-rf-50"
+          >
+            Start a Conversation
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRICING / ENGAGEMENTS
+    ========================== -->
 
     <section id="pricing" class="py-16 bg-white">
-  <div class="max-content px-6 text-center">
-    <h2 class="text-3xl font-bold text-rf-700 mb-4">Pricing Plans</h2>
-    <p class="text-slate-600 max-w-2xl mx-auto mb-10">
-      Simple, transparent pricing designed for small and medium businesses.
-      Pay only for what you need — no contracts, no surprises.
-    </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Basic -->
-      <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
-        <h3 class="text-xl font-semibold text-rf-700 mb-2">Starter</h3>
-        <p class="text-slate-500 text-sm mb-4">Perfect for small teams or solo businesses</p>
-        <p class="text-4xl font-bold text-rf-700 mb-2">$249<span class="text-base font-normal text-slate-500">/month</span></p>
-        <ul class="text-sm text-slate-600 mb-6 space-y-2">
-          <li>✅ AI Email & Task Automation</li>
-          <li>✅ Weekly Activity Reports</li>
-          <li>✅ Dashboard Access</li>
-          <li>❌ No Dedicated Support</li>
-        </ul>
-        <a href="#contact" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Get Started</a>
+      <div class="max-content px-6 text-center">
+
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">
+          Flexible Engagements
+        </h2>
+
+        <p class="text-slate-600 max-w-2xl mx-auto mb-10">
+
+          Every business has different needs.
+          We offer project-based consulting and ongoing support rather than
+          forcing you into a fixed package.
+
+        </p>
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+
+          <!-- AUDIT -->
+
+          <div class="border rounded-2xl p-7 shadow-sm soft-card">
+
+            <div class="text-sm font-semibold text-rf-500 mb-3">
+              START HERE
+            </div>
+
+            <h3 class="text-xl font-semibold text-rf-700 mb-3">
+              Business Audit
+            </h3>
+
+            <p class="text-slate-500 text-sm mb-5">
+
+              A focused review of your current systems, processes,
+              data and operations.
+
+            </p>
+
+            <ul class="text-sm text-slate-600 mb-7 space-y-3 text-left">
+
+              <li>✓ Business & operations review</li>
+              <li>✓ Identify bottlenecks</li>
+              <li>✓ Identify automation opportunities</li>
+              <li>✓ Improvement recommendations</li>
+              <li>✓ Practical roadmap</li>
+
+            </ul>
+
+            <a
+              href="#contact"
+              class="inline-block bg-rf-700 text-white py-2 px-5 rounded-lg hover:bg-rf-600"
+            >
+              Discuss Your Business
+            </a>
+
+          </div>
+
+
+          <!-- PROJECT -->
+
+          <div class="border-2 border-rf-700 rounded-2xl p-7 shadow-lg bg-slate-50 soft-card">
+
+            <div class="text-sm font-semibold text-rf-500 mb-3">
+              PROJECT
+            </div>
+
+            <h3 class="text-xl font-semibold text-rf-700 mb-3">
+              Business Improvement
+            </h3>
+
+            <p class="text-slate-500 text-sm mb-5">
+
+              A tailored project designed around a specific business
+              problem or opportunity.
+
+            </p>
+
+            <ul class="text-sm text-slate-600 mb-7 space-y-3 text-left">
+
+              <li>✓ Dashboards & reporting</li>
+              <li>✓ Process improvement</li>
+              <li>✓ Office systems</li>
+              <li>✓ AI & automation</li>
+              <li>✓ Business analysis</li>
+
+            </ul>
+
+            <a
+              href="#contact"
+              class="inline-block bg-rf-700 text-white py-2 px-5 rounded-lg hover:bg-rf-600"
+            >
+              Discuss a Project
+            </a>
+
+          </div>
+
+
+          <!-- ONGOING -->
+
+          <div class="border rounded-2xl p-7 shadow-sm soft-card">
+
+            <div class="text-sm font-semibold text-rf-500 mb-3">
+              ONGOING
+            </div>
+
+            <h3 class="text-xl font-semibold text-rf-700 mb-3">
+              Ongoing Support
+            </h3>
+
+            <p class="text-slate-500 text-sm mb-5">
+
+              Flexible remote support for businesses that need a reliable
+              partner without hiring full-time.
+
+            </p>
+
+            <ul class="text-sm text-slate-600 mb-7 space-y-3 text-left">
+
+              <li>✓ Monthly reporting</li>
+              <li>✓ Office & operations support</li>
+              <li>✓ Data analysis</li>
+              <li>✓ Process support</li>
+              <li>✓ Continuous improvement</li>
+
+            </ul>
+
+            <a
+              href="#contact"
+              class="inline-block bg-rf-700 text-white py-2 px-5 rounded-lg hover:bg-rf-600"
+            >
+              Talk to Us
+            </a>
+
+          </div>
+
+        </div>
+
+        <p class="text-xs text-slate-400 mt-7">
+          Pricing is tailored to the scope, complexity and requirements of each engagement.
+        </p>
+
       </div>
 
-      <!-- Standard -->
-      <div class="border-2 border-rf-700 rounded-2xl p-6 shadow-lg bg-slate-50 hover:shadow-xl transition-all">
-        <h3 class="text-xl font-semibold text-rf-700 mb-2">Professional</h3>
-        <p class="text-slate-500 text-sm mb-4">For growing businesses needing deeper insights</p>
-        <p class="text-4xl font-bold text-rf-700 mb-2">$499<span class="text-base font-normal text-slate-500">/month</span></p>
-        <ul class="text-sm text-slate-600 mb-6 space-y-2">
-          <li>✅ Full AI Workflow Integration</li>
-          <li>✅ Weekly Reports & Cost Comparison</li>
-          <li>✅ Custom Power BI Dashboards</li>
-          <li>✅ Priority Support</li>
-        </ul>
-        <a href="#contact" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Start Today</a>
+    </section>
+
+
+    <!-- =========================
+         GRADIENT WAVE
+    ========================== -->
+
+    <div class="w-full py-6">
+
+      <div class="relative mx-auto max-w-5xl h-8 overflow-hidden">
+
+        <svg
+          viewBox="0 0 1440 120"
+          class="absolute w-full h-full"
+        >
+
+          <path
+            fill="url(#rf-gradient)"
+            fill-opacity="1"
+            d="M0,80 C240,20 480,140 720,80 C960,20 1200,140 1440,80 L1440 120 L0 120 Z"
+          ></path>
+
+          <defs>
+
+            <linearGradient
+              id="rf-gradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+            >
+
+              <stop
+                offset="0%"
+                stop-color="#00BFA6"
+              ></stop>
+
+              <stop
+                offset="100%"
+                stop-color="#34D1FF"
+              ></stop>
+
+            </linearGradient>
+
+          </defs>
+
+        </svg>
+
       </div>
 
-      <!-- Enterprise -->
-      <div class="border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
-        <h3 class="text-xl font-semibold text-rf-700 mb-2">Enterprise</h3>
-        <p class="text-slate-500 text-sm mb-4">Tailored AI solutions for larger teams</p>
-        <p class="text-4xl font-bold text-rf-700 mb-2">Custom</p>
-        <ul class="text-sm text-slate-600 mb-6 space-y-2">
-          <li>✅ End-to-End Automation</li>
-          <li>✅ Real-Time Dashboards</li>
-          <li>✅ Team Training & Support</li>
-          <li>✅ Dedicated Account Manager</li>
-        </ul>
-        <a href="mailto:contact@reachflowai.com" class="inline-block bg-rf-700 text-white py-2 px-4 rounded-lg hover:bg-rf-600">Contact Us</a>
-      </div>
     </div>
-  </div>
-</section>
-
-    <!-- Gradient Wave Divider -->
-<div class="w-full py-6">
-  <div class="relative mx-auto max-w-5xl h-8 overflow-hidden">
-    <svg viewBox="0 0 1440 120" class="absolute w-full h-full animate-wave">
-      <path fill="url(#rf-gradient)" fill-opacity="1" 
-        d="M0,80 C240,20 480,140 720,80 C960,20 1200,140 1440,80 L1440 120 L0 120 Z"></path>
-
-      <defs>
-        <linearGradient id="rf-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#00BFA6"></stop>
-          <stop offset="100%" stop-color="#34D1FF"></stop>
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
-</div>
-
-    
-<section id="dashboard" class="py-16 bg-slate-50">
-  <div class="max-content px-6 text-center">
-    <h2 class="text-3xl font-bold text-rf-700 mb-4">Performance Dashboard Example</h2>
-    <p class="text-slate-600 max-w-3xl mx-auto mb-8">
-      Every week, we deliver a clear dashboard showing your business performance, 
-      comparing traditional workflows vs. AI-enhanced workflows. 
-      You’ll see hours saved, productivity gains, and cost reduction visualised in an easy-to-understand format.
-    </p>
-
-    <div class="max-w-4xl mx-auto">
-      <img src="ChatGPT Image 12 nov 2025, 20_13_30.png" alt="Reach Flow AI Dashboard" class="rounded-2xl shadow-lg mb-6">
-      <p class="text-sm text-slate-500 italic">
-        Example: weekly performance dashboard comparing manual operations vs. AI-automated workflows.
-      </p>
-    </div>
-  </div>
-</section>
 
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-16 bg-slate-50">
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section id="dashboard" class="py-16 bg-slate-50">
+
+      <div class="max-content px-6 text-center">
+
+        <div class="text-rf-500 text-sm font-semibold mb-3">
+          DATA & REPORTING
+        </div>
+
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">
+          Turn your data into decisions.
+        </h2>
+
+        <p class="text-slate-600 max-w-3xl mx-auto mb-8">
+
+          Clear reporting gives business owners a better understanding of
+          what is happening, where performance is changing and where action
+          may be needed.
+
+        </p>
+
+
+        <div class="max-w-4xl mx-auto">
+
+          <img
+            src="ChatGPT Image 12 nov 2025, 20_13_30.png"
+            alt="Reach Flow Business Dashboard"
+            class="rounded-2xl shadow-lg mb-6"
+          />
+
+          <p class="text-sm text-slate-500 italic">
+
+            Example business performance dashboard.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <section id="portfolio" class="py-16 bg-white">
+
       <div class="max-content px-6">
-        <h2 class="text-3xl font-bold text-rf-700 mb-6 text-center">Portfolio & Case Studies</h2>
+
+        <div class="text-center mb-10">
+
+          <h2 class="text-3xl font-bold text-rf-700 mb-4">
+            Selected Work
+          </h2>
+
+          <p class="text-slate-600 max-w-2xl mx-auto">
+
+            Examples of how data, analysis and business systems can be used
+            to solve practical problems.
+
+          </p>
+
+        </div>
+
+
         <div class="grid md:grid-cols-2 gap-6">
-          <!-- Project placeholders: fill with real blocks later -->
-          <div class="bg-white p-6 rounded-xl2 shadow-sm">
-            <h3 class="font-semibold">Erbachers — Sales dashboard</h3>
-            <p class="text-sm text-slate-600 mt-2">Periodic sales analysis and dashboarding for retail customer.</p>
-            <a class="inline-block mt-4 text-rf-700 font-medium" href="#">View project</a>
+
+
+          <!-- ERBACHERS -->
+
+          <div class="bg-slate-50 p-7 rounded-xl2 shadow-sm soft-card">
+
+            <div class="text-sm font-semibold text-rf-500 mb-3">
+              DATA & REPORTING
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700">
+              Erbachers — Sales Dashboard
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+
+              Periodic sales analysis and dashboarding designed to make
+              customer and sales performance easier to understand.
+
+            </p>
+
+            <a
+              class="inline-block mt-5 text-rf-700 font-medium"
+              href="#contact"
+            >
+              Discuss a similar project →
+            </a>
+
           </div>
 
-          <div class="bg-white p-6 rounded-xl2 shadow-sm">
-            <h3 class="font-semibold">South Swell — Cost & sales analysis</h3>
-            <p class="text-sm text-slate-600 mt-2">Cost analysis, seasonality and Power BI dashboards for e-commerce.</p>
-            <a class="inline-block mt-4 text-rf-700 font-medium" href="#">View project</a>
+
+          <!-- SOUTH SWELL -->
+
+          <div class="bg-slate-50 p-7 rounded-xl2 shadow-sm soft-card">
+
+            <div class="text-sm font-semibold text-rf-500 mb-3">
+              BUSINESS ANALYSIS
+            </div>
+
+            <h3 class="font-semibold text-xl text-rf-700">
+              South Swell — Cost & Sales Analysis
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+
+              Cost analysis, seasonality and business reporting for a
+              surfboard and e-commerce operation.
+
+            </p>
+
+            <a
+              class="inline-block mt-5 text-rf-700 font-medium"
+              href="#contact"
+            >
+              Discuss a similar project →
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- TESTIMONIALS (placeholder) -->
-    <section id="testimonials" class="py-16">
+
+    <!-- =========================
+         WHY REACH FLOW
+    ========================== -->
+
+    <section id="why" class="py-16 bg-slate-50">
+
       <div class="max-content px-6 text-center">
-        <h2 class="text-3xl font-bold text-rf-700 mb-6">What clients say</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="p-6 bg-white rounded-xl2 shadow-sm">
-            <!-- add testimonial text -->
+
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">
+          Why Reach Flow?
+        </h2>
+
+        <p class="text-slate-600 max-w-2xl mx-auto mb-10">
+
+          We combine analytical thinking with practical business support.
+          The goal isn't to add more technology — it's to make your business
+          work better.
+
+        </p>
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Practical
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              Solutions designed around real business problems,
+              not unnecessary complexity.
+
+            </p>
+
           </div>
-          <div class="p-6 bg-white rounded-xl2 shadow-sm">
-            <!-- add testimonial text -->
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Flexible
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              Work with us on a single project or keep us involved
+              as an ongoing remote business partner.
+
+            </p>
+
           </div>
+
+
+          <div class="bg-white p-7 rounded-xl2 shadow-sm">
+
+            <h3 class="font-semibold text-lg text-rf-700 mb-3">
+              Data-driven
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+
+              We use data, systems and measurable information to help
+              businesses make better decisions.
+
+            </p>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="CAREERS" class="py-16">
-  <div class="max-content px-6 text-center">
-    <h2 class="text-3xl font-bold text-rf-700 mb-4">Join Our Team</h2>
-    <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
-      We’re growing fast and looking for motivated individuals who want to be part of something new.
-      Whether you’re into AI, data, communication, or admin support—Reach Flow AI offers a space where tech meets people.
-      <br><br>
-      We’re based on the Sunshine Coast but work with talent everywhere. 
-      If you’d like to collaborate, send your CV or a short intro to 
-      <a href="mailto:careers@reachflowai.com" class="text-rf-700 font-medium">careers@reachflowai.com</a>.
-    </p>
-  </div>
-</section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-16 bg-slate-50">
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="py-16">
+
       <div class="max-content px-6 text-center">
-        <h2 class="text-3xl font-bold text-rf-700 mb-4">Contact</h2>
-        <p class="text-slate-600 mb-6">Interested in a pilot or quote? Reach out — happy to discuss a free 15-minute discovery call.</p>
+
+        <h2 class="text-3xl font-bold text-rf-700 mb-4">
+          Let's improve your business.
+        </h2>
+
+        <p class="text-slate-600 max-w-2xl mx-auto mb-8">
+
+          Not sure exactly what you need?
+          That's okay. Tell us what you're trying to improve and we'll help
+          you identify the right solution.
+
+        </p>
+
 
         <div class="max-w-xl mx-auto">
-          <!-- simple mailto form (no backend) -->
-          <form action="mailto:contact@reachflowai.com" method="post" enctype="text/plain" class="grid gap-4">
-            <input name="name" required class="border p-3 rounded" placeholder="Your name" />
-            <input name="email" type="email" required class="border p-3 rounded" placeholder="Email" />
-            <input name="company" class="border p-3 rounded" placeholder="Company (optional)" />
-            <textarea name="message" rows="5" class="border p-3 rounded" placeholder="Short description of the project"></textarea>
-            <div class="flex gap-4 justify-center">
-              <button type="submit" class="bg-rf-700 text-white px-6 py-3 rounded-full">Send Message</button>
-              <a href="mailto:contact@reachflowai.com" class="px-6 py-3 rounded-full border border-slate-200">Or email directly</a>
+
+          <form
+            action="mailto:contact@reachflowai.com"
+            method="post"
+            enctype="text/plain"
+            class="grid gap-4"
+          >
+
+            <input
+              name="name"
+              required
+              class="border p-3 rounded"
+              placeholder="Your name"
+            />
+
+            <input
+              name="email"
+              type="email"
+              required
+              class="border p-3 rounded"
+              placeholder="Email"
+            />
+
+            <input
+              name="company"
+              class="border p-3 rounded"
+              placeholder="Company"
+            />
+
+            <select
+              name="service"
+              class="border p-3 rounded bg-white text-slate-600"
+            >
+
+              <option value="">
+                What can we help with?
+              </option>
+
+              <option>
+                Business Consulting
+              </option>
+
+              <option>
+                Data & Reporting
+              </option>
+
+              <option>
+                Office & Operations
+              </option>
+
+              <option>
+                Process Improvement
+              </option>
+
+              <option>
+                AI & Automation
+              </option>
+
+              <option>
+                Ongoing Support
+              </option>
+
+              <option>
+                Not sure yet
+              </option>
+
+            </select>
+
+
+            <textarea
+              name="message"
+              rows="5"
+              class="border p-3 rounded"
+              placeholder="Tell us briefly what you're trying to improve..."
+            ></textarea>
+
+
+            <div class="flex gap-4 justify-center flex-wrap">
+
+              <button
+                type="submit"
+                class="bg-rf-700 text-white px-6 py-3 rounded-full hover:bg-rf-600"
+              >
+                Start a Conversation
+              </button>
+
+              <a
+                href="mailto:contact@reachflowai.com"
+                class="px-6 py-3 rounded-full border border-slate-200 hover:bg-slate-50"
+              >
+                Email Directly
+              </a>
+
             </div>
+
           </form>
+
         </div>
 
+
         <div class="mt-8 text-sm text-slate-500">
-          <p>Phone: <a href="tel:+61484246614" class="text-rf-700 font-medium">+61 484 246 614</a></p>
-          <p>ABN: <span class="font-medium">84818053903</span></p>
+
+          <p>
+            Phone:
+            <a
+              href="tel:+61484246614"
+              class="text-rf-700 font-medium"
+            >
+              +61 484 246 614
+            </a>
+          </p>
+
+          <p>
+            ABN:
+            <span class="font-medium">
+              84818053903
+            </span>
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer class="bg-rf-700 text-white py-8 mt-12">
-    <div class="max-content px-6 text-center">
+
+    <div class="max-content px-6">
+
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
         <div>
-          <div class="font-semibold">Reach Flow AI</div>
-          <div class="text-sm">Smart customer automation — Sunshine Coast</div>
+
+          <div class="font-semibold">
+            Reach Flow
+          </div>
+
+          <div class="text-sm text-rf-50">
+            Business consulting & remote support
+          </div>
+
         </div>
 
-        <div class="text-sm">
-          <div>© <span id="year"></span> Reach Flow AI</div>
-          <div>ABN: <span class="font-medium">84818053903</span></div>
+
+        <div class="text-sm text-center md:text-right">
+
+          <div>
+            © <span id="year"></span> Reach Flow
+          </div>
+
+          <div>
+            ABN:
+            <span class="font-medium">
+              84818053903
+            </span>
+          </div>
+
         </div>
+
       </div>
+
     </div>
+
   </footer>
 
-  <script>
-    // small UI scripts
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // mobile nav toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Current year
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+
+    // Mobile navigation
+
+    const navToggle =
+      document.getElementById('nav-toggle');
+
+    const mobileNav =
+      document.getElementById('mobile-nav');
+
+
     navToggle?.addEventListener('click', () => {
+
       mobileNav.classList.toggle('hidden');
+
     });
+
+
+    // Close mobile navigation after clicking a link
+
+    mobileNav?.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        mobileNav.classList.add('hidden');
+
+      });
+
+    });
+
   </script>
+
 </body>
 </html>
-
+```
