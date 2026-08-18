@@ -1,4 +1,4 @@
-```html
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -90,125 +90,169 @@
 
 <body class="antialiased text-slate-800 bg-white">
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
+  
+<!-- =========================
+     NAVIGATION
+========================== -->
 
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b">
 
-    <div class="max-content px-6 py-4 flex items-center justify-between">
+  <div class="max-content px-6 py-4 flex items-center justify-between">
 
-      <div class="flex items-center gap-4">
+    <!-- Logo -->
 
-        <a href="#" class="flex items-center gap-3">
+    <div class="flex items-center">
 
-          <img
-            src="ChatGPT Image Reach Flow AI Co..png"
-            alt="Reach Flow"
-            class="h-10 w-auto"
+      <a href="#" class="flex items-center gap-3">
+
+        <img
+          src="ChatGPT Image Reach Flow AI Co..png"
+          alt="Reach Flow"
+          class="h-14 md:h-16 w-auto object-contain"
+        />
+
+        <div class="hidden sm:block">
+
+          <div class="font-semibold text-xl text-rf-700 leading-tight">
+            Reach Flow
+          </div>
+
+          <div class="text-xs text-slate-500">
+            Business Consulting & Remote Support
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- Desktop navigation -->
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+
+      <a
+        href="#about"
+        class="text-slate-700 hover:text-rf-700 transition"
+      >
+        About
+      </a>
+
+      <a
+        href="#services"
+        class="text-slate-700 hover:text-rf-700 transition"
+      >
+        Services
+      </a>
+
+      <a
+        href="#approach"
+        class="text-slate-700 hover:text-rf-700 transition"
+      >
+        Our Approach
+      </a>
+
+      <a
+        href="#portfolio"
+        class="text-slate-700 hover:text-rf-700 transition"
+      >
+        Portfolio
+      </a>
+
+      <a
+        href="#contact"
+        class="px-5 py-2.5 bg-rf-500 text-white rounded-full font-medium hover:bg-rf-600 transition shadow-sm"
+      >
+        Let's Talk
+      </a>
+
+    </nav>
+
+
+    <!-- Mobile menu button -->
+
+    <div class="md:hidden">
+
+      <button
+        id="nav-toggle"
+        class="p-2 rounded-md hover:bg-slate-100"
+        aria-label="Open navigation"
+      >
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-rf-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
           />
 
-          <span class="font-semibold text-lg text-rf-700">
-            Reach Flow
-          </span>
+        </svg>
 
-        </a>
-
-      </div>
-
-      <!-- Desktop navigation -->
-
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-
-        <a href="#about" class="hover:text-rf-700">
-          About
-        </a>
-
-        <a href="#services" class="hover:text-rf-700">
-          Services
-        </a>
-
-        <a href="#approach" class="hover:text-rf-700">
-          Our Approach
-        </a>
-
-        <a href="#portfolio" class="hover:text-rf-700">
-          Portfolio
-        </a>
-
-        <a
-          href="#contact"
-          class="px-4 py-2 bg-rf-500 text-white rounded-full hover:bg-rf-600"
-        >
-          Let's Talk
-        </a>
-
-      </nav>
-
-      <!-- Mobile menu button -->
-
-      <div class="md:hidden">
-
-        <button
-          id="nav-toggle"
-          class="p-2 rounded-md hover:bg-slate-100"
-          aria-label="Open navigation"
-        >
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-
-          </svg>
-
-        </button>
-
-      </div>
+      </button>
 
     </div>
 
-    <!-- Mobile navigation -->
+  </div>
 
-    <div id="mobile-nav" class="md:hidden hidden border-t">
 
-      <div class="px-6 py-4 flex flex-col gap-3">
+  <!-- Mobile navigation -->
 
-        <a href="#about" class="py-2">
-          About
-        </a>
+  <div
+    id="mobile-nav"
+    class="md:hidden hidden border-t bg-white"
+  >
 
-        <a href="#services" class="py-2">
-          Services
-        </a>
+    <div class="px-6 py-4 flex flex-col gap-3">
 
-        <a href="#approach" class="py-2">
-          Our Approach
-        </a>
+      <a
+        href="#about"
+        class="py-2 text-slate-700 hover:text-rf-700"
+      >
+        About
+      </a>
 
-        <a href="#portfolio" class="py-2">
-          Portfolio
-        </a>
+      <a
+        href="#services"
+        class="py-2 text-slate-700 hover:text-rf-700"
+      >
+        Services
+      </a>
 
-        <a href="#contact" class="py-2 font-medium text-rf-700">
-          Let's Talk
-        </a>
+      <a
+        href="#approach"
+        class="py-2 text-slate-700 hover:text-rf-700"
+      >
+        Our Approach
+      </a>
 
-      </div>
+      <a
+        href="#portfolio"
+        class="py-2 text-slate-700 hover:text-rf-700"
+      >
+        Portfolio
+      </a>
+
+      <a
+        href="#contact"
+        class="py-2 font-medium text-rf-700"
+      >
+        Let's Talk
+      </a>
 
     </div>
 
-  </header>
+  </div>
+
+</header>
 
 
   <!-- =========================
